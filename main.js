@@ -2,7 +2,13 @@ const app = new Vue({
   el: '#app',
   data: {
     text: '',
-    pwd: ''
+    pwd: '',
+    show: ''
+  },
+  methods: {
+    encrypt: function() {
+      this.show = sjcl.encrypt(this.pwd, this.text);
+    }
   }
 });
 
