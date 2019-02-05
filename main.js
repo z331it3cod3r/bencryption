@@ -5,3 +5,7 @@ const app = new Vue({
     pwd: ''
   }
 });
+
+window.onerror = function(e, url, line) {
+  alert(e + ' Line: ' + line);
+}
