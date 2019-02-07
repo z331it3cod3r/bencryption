@@ -7,10 +7,10 @@ const app = new Vue({
   },
   methods: {
     encrypt: function() {
-      this.show = btoa(btoa(sjcl.encrypt(this.pwd, this.text)));
+      this.show = CryptoJS.AES.encrypt(this.text, this.pwd);
     },
     decrypt: function() {
-      this.show = sjcl.decrypt(this.pwd, atob(atob(this.text)));
+      this.show = CryptoJS.AES.decrypt(this.text, this.pwd);
     }
   }
 });
